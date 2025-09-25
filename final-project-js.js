@@ -17,20 +17,19 @@ resetbutton.addEventListener('click',()=>{
     showAllCards();
 });
  function showOnlyOneCrd(idshown){
-    allcoursecards.forEach(card=>{
-        if(card.id==idshown){
-            card.parentElement.style.display='block';
-            card.classList.add('active');}
+    alllinks.forEach(link=>{
+        const cardId = link.querySelector('.course-card').id;
+        if(card.Id==idshown){
+            link.classList.add('active');}
             else{
-                card.parentElement.style.display='none';
+                link.classList.remove('active');
             }
          
     });
  }
  function showAllCards(){
-    allcoursecards.forEach(card=>{
-        card.parentElement.style.display='block';
-        card.classList.remove('active');
+    alllinks.forEach(link=>{
+        link.classList.add('active');
     });
 }
 

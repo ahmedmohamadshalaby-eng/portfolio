@@ -62,3 +62,9 @@ body{
 .course-card.active{
      font-size: 1.5em;
 }
+.course{
+    display: none;;
+}
+.course.active{
+    display:block;
+}
