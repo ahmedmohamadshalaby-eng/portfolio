@@ -16,20 +16,27 @@ link.addEventListener('dbclick',()=>{
 resetbutton.addEventListener('click',()=>{
     showAllCards();
 });
- function showOnlyOneCrd(idshown){
+ function showOnlyOneCrd(cardID){
     alllinks.forEach(link=>{
-        const cardId = link.querySelector('.course-card').id;
-        if(card.Id==idshown){
-            link.classList.add('active');}
+        const currentcard = link.querySelector('.course-card').id;
+        if(currenrcard && currentcard.id==cardId){
+            link.style.display='block';}
             else{
-                link.classList.remove('active');
+                link.style.display='none';
             }
          
     });
  }
+ alllinks.forEach(link=>{
+    link.addEventListener('click',(event)=>{
+        event.preventDefault();
+        const cardId=link.querySelector('.course-card').id;
+        showOnlyOneCArd(cardId);
+    });
+ });
  function showAllCards(){
     alllinks.forEach(link=>{
-        link.classList.add('active');
+        link.style.display='block';
     });
 }
 
